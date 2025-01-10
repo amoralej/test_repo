@@ -17,4 +17,6 @@ jobs:
       - name: Push changes to fr1
         run: |
           git pull
+          git branch -a -v
+          git branch
           git push origin main:18.0-fr1
