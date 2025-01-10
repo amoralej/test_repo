@@ -20,9 +20,5 @@ jobs:
       - name: Push changes to fr1
         run: |
           git checkout main
-          git fetch origin
-          git checkout 18.0-fr1
-          git pull
-          git merge origin/main
           git branch -a -v
-          git push origin 18.0-fr1
+          git push origin main:18.0-fr1
