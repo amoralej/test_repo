@@ -19,4 +19,4 @@ jobs:
           git pull
           git branch -a -v
           git branch
-          git push origin main:18.0-fr1
+          git push origin main:18.0-fr1 --force
