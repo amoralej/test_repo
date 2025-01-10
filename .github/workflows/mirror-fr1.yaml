@@ -1,14 +1,18 @@
-name: Mirror branch
+name: Mirror to fr1 branch
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
 
 jobs:
-  mirror-to-master:
+  mirror-main-to-fr1:
     runs-on: ubuntu-latest
-    steps:
-    - uses: zofrex/mirror-branch@v1.0.4
-      with:
-        target-branch: 18.0-fr1
+    permissions:
+      contents: write
 
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Push changes to fr1
+        run: git push origin main:18.0-fr1
